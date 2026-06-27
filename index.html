@@ -3511,7 +3511,7 @@
     <!-- QUIZ CARDS OVERLAY -->
     <div id="quiz-cards-overlay" class="screen-overlay">
         <div class="content-card">
-            <div class="quiz-header">Kartu Angklung</div>
+            <div class="quiz-header" id="quiz-cards-title">Kartu Angklung</div>
             <div class="cards-container">
                 <div class="card description-card" id="card-1">
                     <div class="card-title">Deskripsi 1</div>
@@ -4728,6 +4728,7 @@
 
             document.querySelector('#card-1 .card-title').innerText = card1Title;
             document.querySelector('#card-2 .card-title').innerText = card2Title;
+            document.getElementById('quiz-cards-title').innerText = regionCardTitles[state.idx] || 'Kartu Angklung';
 
             // Set card 3 and 4 titles
             document.querySelector('#card-3 .card-title').innerText = card3Title;
