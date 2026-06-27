@@ -4698,8 +4698,27 @@
 
             let desc1HTML = `<div style="display:flex;flex-direction:column;align-items:flex-start;gap:12px;"><img src="https://raw.githubusercontent.com/aliyadewirahmawati-ui/RO-JUNE/767ef518a0d3ef0b2308eec94259bd40f9d32f83/ALAT%20MUSIK%20DI%20GAME%20(1).png" alt="Alat Musik" style="width:220px;height:220px;object-fit:contain;border-radius:12px;"/><div style="font-size:14px;line-height:1.5;text-align:justify;width:100%;padding:0 20px 0 0;">${quiz1.q}</div></div>`;
             let desc2HTML = `<div style="display:flex;flex-direction:column;align-items:flex-start;gap:12px;"><img src="https://raw.githubusercontent.com/aliyadewirahmawati-ui/RO-JUNE/767ef518a0d3ef0b2308eec94259bd40f9d32f83/ALAT%20MUSIK%20DI%20GAME%20(1).png" alt="Alat Musik" style="width:220px;height:220px;object-fit:contain;border-radius:12px;"/><div style="font-size:14px;line-height:1.5;text-align:justify;width:100%;padding:0 20px 0 0;">${quiz2.q}</div></div>`;
-            let card3Title = 'Soal 1';
-            let card4Title = 'Soal 2';
+            const regionCardTitles = {
+                1: 'sasando - ntt (kartu sasando)',
+                2: 'serune kalee - aceh',
+                3: 'kolintang - sulut',
+                4: 'tifa totobuang - maluku',
+                5: 'gitar gambus - kep. riau',
+                6: 'gordang sambilan - sumut',
+                7: 'sape - kalbar',
+                8: 'suling lembang - sulsel/toraja',
+                9: 'kompang/khaddap - lampung',
+                10: 'rebab - jatim',
+                11: 'gendang melayu jambi - jambi',
+                12: 'talempong - sumbar',
+                13: 'kenong basemah - sumsel',
+                14: 'gong luang - bali',
+                15: 'angklung - jabar'
+            };
+            const card1Title = regionCardTitles[state.idx] || 'Deskripsi 1';
+            const card2Title = regionCardTitles[nextIdx] || 'Deskripsi 2';
+            const card3Title = regionCardTitles[state.idx] || 'Soal 1';
+            const card4Title = regionCardTitles[nextIdx] || 'Soal 2';
             let card3HTML = `<div style="display:flex;flex-direction:column;align-items:flex-start;gap:12px;"><img src="https://raw.githubusercontent.com/aliyadewirahmawati-ui/RO-JUNE/767ef518a0d3ef0b2308eec94259bd40f9d32f83/ALAT%20MUSIK%20DI%20GAME%20(1).png" alt="Alat Musik" style="width:220px;height:220px;object-fit:contain;border-radius:12px;"/><div style="font-size:14px;line-height:1.5;text-align:justify;width:100%;padding:0 20px 0 0;">${quiz1.q}</div></div>`;
             let card4HTML = `<div style="display:flex;flex-direction:column;align-items:flex-start;gap:12px;"><img src="https://raw.githubusercontent.com/aliyadewirahmawati-ui/RO-JUNE/767ef518a0d3ef0b2308eec94259bd40f9d32f83/ALAT%20MUSIK%20DI%20GAME%20(1).png" alt="Alat Musik" style="width:220px;height:220px;object-fit:contain;border-radius:12px;"/><div style="font-size:14px;line-height:1.5;text-align:justify;width:100%;padding:0 20px 0 0;">${quiz2.q}</div></div>`;
             let card3Options = quiz1.a;
@@ -4707,23 +4726,8 @@
             let card4Options = quiz2.a;
             let card4Correct = quiz2.correct;
 
-            if (state.idx === 1) {
-                document.querySelector('#card-1 .card-title').innerText = 'Deskripsi 1';
-                desc1HTML = `<div style="display:flex;flex-direction:column;align-items:flex-start;gap:12px;"><img src="https://raw.githubusercontent.com/aliyadewirahmawati-ui/RO-JUNE/767ef518a0d3ef0b2308eec94259bd40f9d32f83/ALAT%20MUSIK%20DI%20GAME%20(1).png" alt="Alat Musik" style="width:220px;height:220px;object-fit:contain;border-radius:12px;"/><div style="font-size:14px;line-height:1.5;text-align:justify;width:100%;padding:0 20px 0 0;">${quiz1.q}</div></div>`;
-                document.querySelector('#card-2 .card-title').innerText = 'Deskripsi 2';
-                desc2HTML = `<div style="display:flex;flex-direction:column;align-items:flex-start;gap:12px;"><img src="https://raw.githubusercontent.com/aliyadewirahmawati-ui/RO-JUNE/767ef518a0d3ef0b2308eec94259bd40f9d32f83/ALAT%20MUSIK%20DI%20GAME%20(1).png" alt="Alat Musik" style="width:220px;height:220px;object-fit:contain;border-radius:12px;"/><div style="font-size:14px;line-height:1.5;text-align:justify;width:100%;padding:0 20px 0 0;">${quiz2.q}</div></div>`;
-                card3Title = 'Soal 1';
-                card3HTML = `<div style="display:flex;flex-direction:column;align-items:flex-start;gap:12px;"><img src="https://raw.githubusercontent.com/aliyadewirahmawati-ui/RO-JUNE/767ef518a0d3ef0b2308eec94259bd40f9d32f83/ALAT%20MUSIK%20DI%20GAME%20(1).png" alt="Alat Musik" style="width:220px;height:220px;object-fit:contain;border-radius:12px;"/><div style="font-size:14px;line-height:1.5;text-align:justify;width:100%;padding:0 20px 0 0;">${quiz1.q}</div></div>`;
-                card3Options = ['A', 'B', 'C', 'D', 'E'];
-                card3Correct = 0;
-                card4Title = 'Soal 2';
-                card4HTML = `<div style="display:flex;flex-direction:column;align-items:flex-start;gap:12px;"><img src="https://raw.githubusercontent.com/aliyadewirahmawati-ui/RO-JUNE/767ef518a0d3ef0b2308eec94259bd40f9d32f83/ALAT%20MUSIK%20DI%20GAME%20(1).png" alt="Alat Musik" style="width:220px;height:220px;object-fit:contain;border-radius:12px;"/><div style="font-size:14px;line-height:1.5;text-align:justify;width:100%;padding:0 20px 0 0;">${quiz2.q}</div></div>`;
-                card4Options = ['A', 'B', 'C', 'D', 'E'];
-                card4Correct = 0;
-            } else {
-                document.querySelector('#card-1 .card-title').innerText = 'Deskripsi 1';
-                document.querySelector('#card-2 .card-title').innerText = 'Deskripsi 2';
-            }
+            document.querySelector('#card-1 .card-title').innerText = card1Title;
+            document.querySelector('#card-2 .card-title').innerText = card2Title;
 
             // Set card 3 and 4 titles
             document.querySelector('#card-3 .card-title').innerText = card3Title;
